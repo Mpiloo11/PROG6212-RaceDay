@@ -1,0 +1,9 @@
+GET /api/events/{eventId}/categories
+POST /api/events/{eventId}/categories
+PUT /api/categories/{id}
+DELETE /api/categories/{id}
+
+GET = Organiser / Participant
+POST = Organiser
+PUT = Organiser
+DELETE = Organiser
