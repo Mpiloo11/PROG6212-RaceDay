@@ -1,0 +1,7 @@
+POST /api/enrolments/{enrolmentId}/result
+GET /api/users/me/results
+GET /api/events/{eventId}/results
+
+Organiser
+Participant
+Organiser / Participant
