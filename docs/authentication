@@ -1,0 +1,14 @@
+POST /api/auth/register
+POST /api/auth/login
+
+Request Body:
+FirstName, LastName, Email, Password, PhoneNumber, Role
+
+Expected Response:
+201 Created
+
+Request Body:
+Email, Password
+
+Expected Response:
+200 OK with authentication information
