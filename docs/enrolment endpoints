@@ -1,0 +1,9 @@
+POST /api/events/{eventId}/enrolments
+GET /api/users/me/enrolments
+GET /api/events/{eventId}/enrolments
+DELETE /api/enrolments/{id}
+
+Participant
+Participant
+Organiser
+Participant
