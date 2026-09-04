@@ -1,0 +1,8 @@
+### Events
+
+The Events entity stores information about RaceDay events.
+
+The main fields are EventID, EventName, Description, EventDate,
+Location, DistanceKM, EventTypeID, OrganiserID and CreatedAt.
+
+Each event belongs to an organiser and has an event type.
