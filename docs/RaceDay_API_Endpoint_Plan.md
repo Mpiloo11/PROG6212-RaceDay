@@ -510,4 +510,14 @@ Status Code - 500
 
 Meaning - Server error 
 
+## Database Entities
+
+The RaceDay database contains six main entities:
+
+- Users
+- Events
+- EventTypes
+- Categories
+- Enrolments
+- Results
  
