@@ -1,0 +1,11 @@
+## Database Relationships
+
+The main relationships in the RaceDay database are:
+
+- One organiser can create many events.
+- One participant can have many enrolments.
+- One event type can be used by many events.
+- One event can have many categories.
+- One event can have many enrolments.
+- One category can have many enrolments.
+- One enrolment can have zero or one result.
