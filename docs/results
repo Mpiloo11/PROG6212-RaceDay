@@ -1,0 +1,8 @@
+### Results
+
+The Results entity stores the result of a participant's completed
+enrolment.
+
+It stores the finish time, finishing position and result date.
+
+An enrolment can have one result.
