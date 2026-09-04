@@ -1,0 +1,7 @@
+### Categories
+
+The Categories entity stores the categories available for each event.
+
+A category can contain age information or a distance.
+
+Each category belongs to one event.
