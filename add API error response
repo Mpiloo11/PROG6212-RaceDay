@@ -1,0 +1,13 @@
+## Expected API Error Responses
+
+The API may return the following common status codes:
+
+- 200 OK: Request completed successfully.
+- 201 Created: New data was created.
+- 204 No Content: Request completed without returning data.
+- 400 Bad Request: The request contains invalid data.
+- 401 Unauthorized: The user is not logged in.
+- 403 Forbidden: The user does not have permission.
+- 404 Not Found: The requested item does not exist.
+- 409 Conflict: The request conflicts with existing data.
+- 500 Internal Server Error: An unexpected server error occurred.
