@@ -1,0 +1,9 @@
+### Users
+
+The Users entity stores information about people who use the RaceDay
+system.
+
+The main fields are UserID, FirstName, LastName, Email, PasswordHash,
+PhoneNumber, Role and CreatedAt.
+
+A user can be an Organiser or Participant.
