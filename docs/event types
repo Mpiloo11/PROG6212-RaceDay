@@ -1,0 +1,8 @@
+### EventTypes
+
+The EventTypes entity stores the different types of events available
+in RaceDay.
+
+The event types used in the system are Run, Walk and Cycle.
+
+Each event has one event type.
