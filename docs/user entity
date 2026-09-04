@@ -1,0 +1,10 @@
+## Database Entities
+
+The RaceDay database contains six main entities:
+
+- Users
+- Events
+- EventTypes
+- Categories
+- Enrolments
+- Results
