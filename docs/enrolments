@@ -1,0 +1,7 @@
+### Enrolments
+
+The Enrolments entity records when a participant enters an event.
+
+It stores the participant, event, category, enrolment date and status.
+
+A participant can enrol in different events.
