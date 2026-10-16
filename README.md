@@ -124,3 +124,11 @@ A green check indicates that the workflow run passed.
 The API includes functionality for authentication and user profiles, event management, event categories, enrolments, and race results. Access to restricted operations depends on the user's assigned role and the endpoint's authorization rules.
 
 The demonstration should show the API running, the Swagger interface, key endpoints, authentication and role-based access, and the automated tests.
+
+Continuous Integration (CI)
+
+The project uses GitHub Actions to build the application and run its automated tests. A successful CI run confirms that the build completes and the tests pass.
+
+Successful CI Build
+
+"Successful GitHub Actions CI build" (screenshots/ci-green-build.png)
