@@ -1,0 +1,52 @@
+﻿@model RaceDay.Web.Models.ProfileViewModel
+
+@{
+    ViewData["Title"] = "My Profile";
+}
+
+<div class="container mt-4">
+    <h2>My Profile</h2>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+
+    <div class="card shadow-sm p-4 mt-3">
+        <form asp-action="Profile" method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="Id" />
+
+            <div asp-validation-summary="All"
+                 class="text-danger"></div>
+
+            <div class="mb-3">
+                <label asp-for="FullName" class="form-label">
+                    Full Name
+                </label>
+                <input asp-for="FullName" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Email" class="form-label">
+                    Email
+                </label>
+                <input asp-for="Email" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Phone" class="form-label">
+                    Phone
+                </label>
+                <input asp-for="Phone" class="form-control" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Update Profile
+            </button>
+        </form>
+    </div>
+</div>

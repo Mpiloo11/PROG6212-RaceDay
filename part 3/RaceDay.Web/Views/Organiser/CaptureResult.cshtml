@@ -1,0 +1,58 @@
+﻿@model RaceDay.Web.Models.CaptureResultViewModel
+
+@{
+    ViewData["Title"] = "Capture Result";
+}
+
+<div class="container mt-4">
+    <h2>Capture Participant Result</h2>
+
+    <div class="card shadow-sm p-4 mt-3">
+        <form asp-action="CaptureResult" method="post">
+            @Html.AntiForgeryToken()
+
+            <input type="hidden" asp-for="EventId" />
+
+            <div asp-validation-summary="All"
+                 class="text-danger mb-3"></div>
+
+            <div class="mb-3">
+                <label asp-for="EnrolmentId" class="form-label">
+                    Select Participant
+                </label>
+
+                <select asp-for="EnrolmentId" class="form-select">
+                    <option value="">-- Select participant --</option>
+
+                    @foreach (var enrolment in Model.Enrolments)
+                    {
+                        <option value="@enrolment.Id">
+                            @enrolment.Participant - @enrolment.Category
+                        </option>
+                    }
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="Position" class="form-label">
+                    Finishing Position
+                </label>
+                <input asp-for="Position" type="number"
+                       min="1" class="form-control" />
+            </div>
+
+            <div class="mb-3">
+                <label asp-for="FinishTime" class="form-label">
+                    Finish Time
+                </label>
+                <input asp-for="FinishTime"
+                       class="form-control"
+                       placeholder="e.g. 00:45:30" />
+            </div>
+
+            <button type="submit" class="btn btn-primary">
+                Save Result
+            </button>
+        </form>
+    </div>
+</div>

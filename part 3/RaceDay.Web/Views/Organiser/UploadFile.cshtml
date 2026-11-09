@@ -1,0 +1,67 @@
+﻿@model RaceDay.Web.Models.FileUploadViewModel
+
+@{
+    ViewData["Title"] = "Upload File";
+}
+
+<div class="container mt-4">
+    <h2>Upload File to Azure</h2>
+
+    @if (TempData["Message"] != null)
+    {
+        <div class="alert alert-success">
+            @TempData["Message"]
+        </div>
+    }
+
+    <form asp-action="UploadFile"
+          method="post"
+          enctype="multipart/form-data">
+
+        @Html.AntiForgeryToken()
+
+        <div asp-validation-summary="ModelOnly"
+             class="text-danger"></div>
+
+        <div class="mb-3">
+            <label asp-for="File" class="form-label">
+                Choose a file
+            </label>
+
+            <input asp-for="File"
+                   type="file"
+                   class="form-control"
+                   accept=".jpg,.jpeg,.png,.pdf" />
+
+            <span asp-validation-for="File"
+                  class="text-danger"></span>
+
+            <small class="form-text text-muted">
+                JPEG, PNG or PDF. Maximum size: 5 MB.
+            </small>
+        </div>
+
+        <button type="submit" class="btn btn-primary">
+            Upload
+        </button>
+
+        <a asp-action="Dashboard"
+           class="btn btn-secondary">
+            Back
+        </a>
+    </form>
+
+    @if (!string.IsNullOrEmpty(Model?.FileUrl))
+    {
+        <div class="alert alert-info mt-3">
+            Upload completed successfully.
+            <p class="mb-0">
+                <small>The file is stored in your private Azure container.</small>
+            </p>
+        </div>
+    }
+</div>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

@@ -1,0 +1,69 @@
+﻿@model List<RaceDay.Web.Models.ParticipantEnrolment>
+
+@{
+    ViewData["Title"] = "My Enrolments";
+}
+
+<div class="container mt-4">
+    <h2 class="mb-4">My Enrolments</h2>
+
+    @if (Model.Count == 0)
+    {
+        <div class="alert alert-info">
+            You have not enrolled in any events yet.
+        </div>
+    }
+    else
+    {
+        <div class="row g-4">
+            @foreach (var enrolment in Model)
+            {
+                <div class="col-md-6">
+                    <div class="card shadow-sm h-100">
+                        <div class="card-body">
+                            <h5 class="card-title">
+                                @enrolment.Event
+                            </h5>
+
+                            <p>
+                                <strong>Category:</strong>
+                                @enrolment.Category
+                            </p>
+
+                            <p>
+                                <strong>Enrolment ID:</strong>
+                                @enrolment.Id
+                            </p>
+
+                            <p>
+                                <strong>Date Enrolled:</strong>
+                                @enrolment.EnrolledUtc.ToString("dd MMM yyyy, HH:mm")
+                            </p>
+
+                            <p>
+                                <strong>Status:</strong>
+                                @if (enrolment.Status == "Confirmed")
+                                {
+                                    <span class="badge bg-success">
+                                        @enrolment.Status
+                                    </span>
+                                }
+                                else
+                                {
+                                    <span class="badge bg-secondary">
+                                        @enrolment.Status
+                                    </span>
+                                }
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    }
+
+    <a asp-action="Dashboard"
+       class="btn btn-secondary mt-4">
+        Back to Dashboard
+    </a>
+</div>
