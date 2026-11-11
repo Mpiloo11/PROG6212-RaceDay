@@ -127,8 +127,131 @@ The demonstration should show the API running, the Swagger interface, key endpoi
 
 Continuous Integration (CI)
 
+# RaceDay – Programming 2B POE Part 3
+
+## Project Overview
+
+RaceDay is a web-based event management system developed for the Programming 2B Portfolio of Evidence (POE). Part 3 extends the existing RaceDay API by introducing an ASP.NET Core MVC web application.
+
+The system allows organisers to manage running events and categories, while participants can enrol in events and view their information.
+
+## Technologies Used
+
+- C#
+- ASP.NET Core Web API
+- ASP.NET Core MVC
+- .NET 8
+- Entity Framework Core
+- SQL Server
+- Azure Blob Storage
+- HTML and CSS
+- Bootstrap
+- Visual Studio 2022
+- GitHub and GitHub Actions
+- Docker and Docker Compose
+
+## Project Structure
+
+The solution contains the following main projects:
+
+- **RaceDay.API** – Handles application data, authentication, event management, participant enrolments and file uploads.
+- **RaceDay.Web** – The MVC web application that provides the user interface and communicates with the API.
+- **RaceDay.Tests** – Contains automated tests for application functionality.
+
+The solution also includes Docker configuration files:
+
+- `RaceDay.API/Dockerfile`
+- `RaceDay.Web/Dockerfile`
+- `docker-compose.yml`
+
+## Features Implemented in Part 3
+
+### 1. MVC Web Application
+
+An ASP.NET Core MVC application was added to provide a user-friendly interface for the RaceDay system.
+
+### 2. Organiser Functionality
+
+Organisers can:
+- View and manage events.
+- Create, update and delete events.
+- Manage event categories.
+- Upload files through the application.
+
+### 3. Participant Functionality
+
+Participants can:
+- View available events.
+- Enrol in events.
+- View their enrolments.
+- View their results.
+- View and manage their profile information.
+
+### 4. API Integration
+
+The MVC application communicates with the existing RaceDay Web API through the `RaceDayApiService`.
+
+The MVC application uses the API for data operations instead of communicating directly with the database.
+
+### 5. Azure Blob Storage
+
+Azure Blob Storage was integrated to support file uploads.
+
+The API handles file uploads through the `BlobStorageService`. The MVC application sends files to the API, and the API stores them in Azure Blob Storage.
+
+Supported file types:
+- JPEG
+- PNG
+- PDF
+
+The maximum upload size is 5 MB.
+
+Azure connection details are stored securely using Visual Studio User Secrets and should not be committed to GitHub.
+
+### 6. Docker Configuration
+
+Dockerfiles were added for both the API and MVC projects, together with a Docker Compose configuration to define the application services.
+
+The Docker configuration is included as part of the Part 3 deployment work. The current SQL Server LocalDB connection requires additional configuration before the application can run fully inside Linux containers.
+
+## Requirements
+
+To run the application locally, you need:
+
+- Visual Studio 2022
+- .NET 8 SDK
+- SQL Server LocalDB
+- A configured Azure Blob Storage account for file uploads
+
+## Running the Application Locally
+
+1. Clone or download this repository.
+2. Open the `RaceDay.API` solution in Visual Studio 2022.
+3. Check the database connection string in the API configuration.
+4. Make sure SQL Server LocalDB is installed and the RaceDay database is available.
+5. Configure the Azure Blob Storage connection string using Visual Studio User Secrets.
+6. Set `RaceDay.API` and `RaceDay.Web` as the startup projects, where applicable.
+7. Run the API and MVC application.
+8. Open the MVC application in your browser.
+
+The API Swagger interface can be accessed at:
+
+`https://localhost:7209/swagger`
+
+The MVC application URL depends on the launch settings configured in Visual Studio.
+
+## Azure Blob Storage Configuration
+
+The Azure Blob Storage connection string must be configured through User Secrets.
+
+Do not add real Azure connection strings, passwords, API keys or other private credentials to GitHub.
+
+## GitHub Repository
+
+**Repository:**  
+https://github.com/Mpiloo11/PROG6212-RaceDay
+
+Part 3 development is maintained in the existing RaceDay repository to preserve the work completed in Parts 1 and 2.
 The project uses GitHub Actions to build the application and run its automated tests. A successful CI run confirms that the build completes and the tests pass.
 
-Successful CI Build
 
-"Successful GitHub Actions CI build" (screenshots/ci-green-build.png)
